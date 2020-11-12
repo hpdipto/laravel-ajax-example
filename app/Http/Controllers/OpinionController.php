@@ -7,9 +7,10 @@ use App\Models\Opinion;
 
 class OpinionController extends Controller
 {
-	public function home()
+	public function home(Request $request)
 	{
 		$opinions = Opinion::all();
+
 		return view('welcome', ['opinions' => $opinions]);
 	}
 
@@ -23,6 +24,8 @@ class OpinionController extends Controller
 			'content' => $content
 		]);
 
-		return redirect('/');
+		return response()->json([
+			"data" => $opinion,
+		]);
 	}
 }

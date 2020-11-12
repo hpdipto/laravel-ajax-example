@@ -16,4 +16,4 @@ use App\Models\Opinion;
 
 Route::get('/', 'App\Http\Controllers\OpinionController@home');
 
-Route::post('/', 'App\Http\Controllers\OpinionController@createOpinion');
+Route::post('/ajax-request', 'App\Http\Controllers\OpinionController@createOpinion');

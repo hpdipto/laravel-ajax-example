@@ -1,7 +1,3 @@
-html {
-	background-color: red;
-}
-
 .preloader {
 	position: fixed;
 	left: 0px;
@@ -11,4 +7,6 @@ html {
 	z-index: 9999;
 	background: url("../images/timer.gif") 50% 50% no-repeat rgb(249, 249, 249);
 	opacity: 0.8;
+	transition-timing-function: ease-out;
+	transition-duration: 3s;
 }
