@@ -31,7 +31,7 @@
                             </button>
                         </div>
 
-                        <form action="/" method="POST">
+                        <form action="/" method="POST" id="opinionForm">
                             @csrf
                             <div class="modal-body">
                                 <div class="form-group">
@@ -42,7 +42,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Share Opinion</button>
+                                <button type="submit" id="submit" class="btn btn-primary">Share Opinion</button>
                             </div>
                         </form>
                     </div>
@@ -54,7 +54,7 @@
 
         <div class="mt-5">
             <p class="h4">Previous opinions</p>
-            <table class="table table-striped">
+            <table id="table" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -65,9 +65,9 @@
                 <tbody>
                     @foreach($opinions as $data)
                     <tr>
-                        <th>{{ $data->title }}</th>
-                        <th>{{ $data->content }}</th>
-                        <th>{{ $data->created_at }}</th>
+                        <td>{{ $data->title }}</td>
+                        <td>{{ $data->content }}</td>
+                        <td>{{ $data->created_at }}</td>
                     </tr>
                     @endforeach
                 </tbody>

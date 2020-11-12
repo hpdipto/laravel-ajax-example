@@ -13,7 +13,7 @@ class OpinionController extends Controller
 		return view('welcome', ['opinions' => $opinions]);
 	}
 
-	public function createOpinion()
+	public function createOpinion(Request $request)
 	{
 		$title = request()->input('title');
 		$content = request()->input('content');
@@ -23,7 +23,6 @@ class OpinionController extends Controller
 			'content' => $content
 		]);
 
-		// $opinions = Opinion::all();
-		// return view('welcome', ['opinions' => $opinions]);
+		return redirect('/');
 	}
 }
